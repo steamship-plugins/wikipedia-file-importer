@@ -25,6 +25,19 @@ task = File.create(client=client, url=url, plugin_instance=plugin_instance)
 
 ```
 
+## Tagging Strategy
+
+This importer uses knowledge of the Wikipedia page structure to extract Steamship Block Format content. It includes
+the title and the body of the page. Each major paragraph or list in the body is returned as a new block. Within
+those blocks, each link, bold/italic/underline span element, sub-list, and the broader block type are tagged.
+
+Whereas the input HTML elements are **nested**, the output Steamship Block structure is **linear**, with **overlapping tags**. 
+The nesting of the HTML could be recovered, if one wished, by reasoning about the overlapping tags.
+
+The following diagram illustrates this approach to tagging:
+
+![Diagram of Tagging Strategy](doc/tagging-strategy.png)
+
 ## Developing
 
 We recommend using a Python virtual environments for development.
