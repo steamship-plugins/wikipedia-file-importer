@@ -1,0 +1,19 @@
+{
+  "type": "plugin",
+  "name": "",
+  "handle": "",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "public": true,
+  "entrypoint": "src.api.handler",
+  "plugin": {
+    "type": "fileImporter",
+    "isTrainable": false,
+    "configTemplate": {
+      "apikey": {
+        "type": "string"
+      }
+    }
+  }
+}
